@@ -11,11 +11,19 @@ count := int(input("Must be above 10, how many do you need :"))
     }
 areaH = int(input("How Tall are your posters?"))
 areaW = int(input("How High are your posters"))
-area = decimal
-price = decimal
+area = 0.1
+price = 0.1
+
+
 
 while iterationcount < count:
-    (
-    price := price + 0.03
-    )
+    
+    if iterationcount < 10:
+        (
+        price := price + 0.03,
+        iterationcount := iterationcount + 1
+        )
+    iterationcount += 1
+    price += 1
+    print (price)
     
