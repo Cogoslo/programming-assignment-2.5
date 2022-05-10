@@ -21,10 +21,10 @@ price = 0.1
 while iterationcount < count:
     
     while iterationcount <= 10:
-        price += (((areaH*areaW)*3)*paperprice[paperchoice])
+        price += (((areaH+areaW)*3)+paperprice[paperchoice])
         iterationcount += 1
     if count != 10:
-        price += (((areaH*areaW)* 0.0075)*paperprice[paperchoice])
+        price += (((areaH+areaW)* 0.0075)+paperprice[paperchoice])
         print (price)
         iterationcount += 1
 
