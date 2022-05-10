@@ -15,6 +15,7 @@ area = decimal
 price = decimal
 
 while iterationcount < count:
-    {
+    (
     price := price + 0.03
-    }
+    )
+    
