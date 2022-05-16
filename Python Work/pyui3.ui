@@ -109,8 +109,6 @@ Do you want?</property>
             </child>
             <child>
               <object class="tk.Radiobutton" id="selectPaper">
-                <property name="compound">top</property>
-                <property name="offrelief">flat</property>
                 <property name="text" translatable="yes">Paper</property>
                 <property name="value">1</property>
                 <property name="variable">int:paperPrice</property>
@@ -132,8 +130,6 @@ Do you want?</property>
             </child>
             <child>
               <object class="tk.Radiobutton" id="selectPVC">
-                <property name="cursor">boat</property>
-                <property name="indicatoron">true</property>
                 <property name="text" translatable="yes">PVC</property>
                 <property name="value">35</property>
                 <property name="variable">int:paperPrice</property>

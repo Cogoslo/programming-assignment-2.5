@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import tkinter as tk
 import tkinter.ttk as ttk
+import decimal
+
 
 
 class Pyui3App:
@@ -33,12 +35,7 @@ class Pyui3App:
         self.AreaY.pack(side="top")
         self.height = tk.Entry(self.areaCountFrame)
         self.areaH = tk.IntVar(value="")
-        self.height.configure(
-            exportselection="false",
-            font="TkDefaultFont",
-            show="0",
-            textvariable=self.areaH,
-        )
+        self.height.configure(font="TkDefaultFont", textvariable=self.areaH)
         self.height.pack(side="top")
         self.areaCountFrame.configure(height="200", width="200")
         self.areaCountFrame.grid(column="0", row="0")
@@ -47,20 +44,14 @@ class Pyui3App:
         self.materialLabel.configure(text="What material\nDo you want?")
         self.materialLabel.pack(side="top")
         self.selectPaper = tk.Radiobutton(self.pickMaterialFrame)
-        self.paperPrice = tk.IntVar(value=1)
-        self.selectPaper.configure(
-            compound="top", offrelief="flat", text="Paper", value="1"
-        )
-        self.selectPaper.configure(variable=self.paperPrice)
+        self.paperPrice = tk.DoubleVar(value=1)
+        self.selectPaper.configure(text="Paper", value="0.00", variable=self.paperPrice)
         self.selectPaper.pack(anchor="w", side="top")
         self.selectLam = tk.Radiobutton(self.pickMaterialFrame)
-        self.selectLam.configure(text="Laminated", value="3", variable=self.paperPrice)
+        self.selectLam.configure(text="Laminated", value="0.03", variable=self.paperPrice)
         self.selectLam.pack(side="top")
         self.selectPVC = tk.Radiobutton(self.pickMaterialFrame)
-        self.selectPVC.configure(
-            cursor="boat", indicatoron="true", text="PVC", value="35"
-        )
-        self.selectPVC.configure(variable=self.paperPrice)
+        self.selectPVC.configure(text="PVC", value="0.35", variable=self.paperPrice)
         self.selectPVC.pack(anchor="w", side="top")
         self.pickMaterialFrame.configure(height="200", width="200")
         self.pickMaterialFrame.grid(column="1", row="0")
@@ -78,7 +69,7 @@ class Pyui3App:
         self.label6.configure(text="Your Poster Costs")
         self.label6.pack(side="left")
         self.priceOutput = tk.Text(self.labelframe6)
-        self.priceOutput.configure(height="1", width="10")
+        self.priceOutput.configure(font="TkFixedFont", height="1", width="10")
         self.priceOutput.pack(side="top")
         self.labelframe6.configure(height="200", text="Output", width="400")
         self.labelframe6.pack(expand="false", fill="x", side="top")
@@ -93,6 +84,27 @@ class Pyui3App:
 
     def calculate(self):
         pass
+        Xarea=int(self.width.get())
+        Yarea=int(self.height.get())
+        iterationcount=1
+        count=int(self.entry6.get())
+        materialprice=decimal
+        materialprice=(self.paperPrice.get())
+        price=decimal
+        price=0
+        priceoutput=float
+
+
+        while iterationcount < count:
+
+            while iterationcount <= 10:
+                price = price + (((Xarea+Yarea)*0.03)+materialprice)
+                iterationcount += 1
+            if count > 10:
+                price = price + (((Xarea+Yarea)*0.0075)+materialprice)
+                iterationcount += 1
+        priceoutput=round(price, 1)
+        self.priceOutput.insert('1.0', priceoutput)
 
 
 if __name__ == "__main__":
