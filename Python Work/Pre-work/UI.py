@@ -48,7 +48,7 @@ class Pyui3App:
         self.selectPaper.configure(text="Paper", value="0.00", variable=self.paperPrice)
         self.selectPaper.pack(anchor="w", side="top")
         self.selectLam = tk.Radiobutton(self.pickMaterialFrame)
-        self.selectLam.configure(text="Laminated", value="0.03", variable=self.paperPrice)
+        self.selectLam.configure(text="Laminated", value="0.05", variable=self.paperPrice)
         self.selectLam.pack(side="top")
         self.selectPVC = tk.Radiobutton(self.pickMaterialFrame)
         self.selectPVC.configure(text="PVC", value="0.35", variable=self.paperPrice)
@@ -84,6 +84,7 @@ class Pyui3App:
 
     def calculate(self):
         pass
+
         Xarea=int(self.width.get())
         Yarea=int(self.height.get())
         iterationcount=1
