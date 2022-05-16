@@ -33,6 +33,24 @@
               <property name="row">0</property>
             </layout>
             <child>
+              <object class="tk.Label" id="label5">
+                <property name="text" translatable="yes">How Many</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry6">
+                <property name="exportselection">true</property>
+                <property name="font">TkMenuFont</property>
+                <property name="textvariable">int:count</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
               <object class="tk.Label" id="AreaX">
                 <property name="cursor">based_arrow_down</property>
                 <property name="relief">flat</property>
@@ -43,9 +61,8 @@
               </object>
             </child>
             <child>
-              <object class="tk.Entry" id="entry7">
+              <object class="tk.Entry" id="width">
                 <property name="font">TkDefaultFont</property>
-                <property name="show">0</property>
                 <property name="textvariable">int:areaW</property>
                 <layout manager="pack">
                   <property name="side">top</property>
@@ -61,28 +78,11 @@
               </object>
             </child>
             <child>
-              <object class="tk.Entry" id="entry5">
+              <object class="tk.Entry" id="height">
+                <property name="exportselection">false</property>
                 <property name="font">TkDefaultFont</property>
                 <property name="show">0</property>
-                <property name="state">normal</property>
                 <property name="textvariable">int:areaH</property>
-                <layout manager="pack">
-                  <property name="side">top</property>
-                </layout>
-              </object>
-            </child>
-            <child>
-              <object class="tk.Label" id="label5">
-                <property name="text" translatable="yes">How Many</property>
-                <layout manager="pack">
-                  <property name="side">top</property>
-                </layout>
-              </object>
-            </child>
-            <child>
-              <object class="tk.Entry" id="entry6">
-                <property name="font">TkDefaultFont</property>
-                <property name="textvariable">int:count</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -99,7 +99,7 @@
               <property name="row">0</property>
             </layout>
             <child>
-              <object class="tk.Label" id="MaterialLabel">
+              <object class="tk.Label" id="materialLabel">
                 <property name="text" translatable="yes">What material
 Do you want?</property>
                 <layout manager="pack">
@@ -113,7 +113,7 @@ Do you want?</property>
                 <property name="offrelief">flat</property>
                 <property name="text" translatable="yes">Paper</property>
                 <property name="value">1</property>
-                <property name="variable">int:paperchoice</property>
+                <property name="variable">int:paperPrice</property>
                 <layout manager="pack">
                   <property name="anchor">w</property>
                   <property name="side">top</property>
@@ -123,8 +123,8 @@ Do you want?</property>
             <child>
               <object class="tk.Radiobutton" id="selectLam">
                 <property name="text" translatable="yes">Laminated</property>
-                <property name="value">2</property>
-                <property name="variable">int:paperchoice</property>
+                <property name="value">3</property>
+                <property name="variable">int:paperPrice</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -135,8 +135,8 @@ Do you want?</property>
                 <property name="cursor">boat</property>
                 <property name="indicatoron">true</property>
                 <property name="text" translatable="yes">PVC</property>
-                <property name="value">3</property>
-                <property name="variable">int:paperchoice</property>
+                <property name="value">35</property>
+                <property name="variable">int:paperPrice</property>
                 <layout manager="pack">
                   <property name="anchor">w</property>
                   <property name="side">top</property>
@@ -148,9 +148,9 @@ Do you want?</property>
       </object>
     </child>
     <child>
-      <object class="tk.Button" id="CalcButton">
+      <object class="tk.Button" id="calcButton">
         <property name="anchor">e</property>
-        <property name="command" type="command" cbtype="simple">Calculate</property>
+        <property name="command" type="command" cbtype="simple">calculate</property>
         <property name="cursor">based_arrow_down</property>
         <property name="default">normal</property>
         <property name="state">normal</property>
@@ -180,7 +180,7 @@ Do you want?</property>
           </object>
         </child>
         <child>
-          <object class="tk.Text" id="PriceOutput">
+          <object class="tk.Text" id="priceOutput">
             <property name="height">1</property>
             <property name="width">10</property>
             <layout manager="pack">
