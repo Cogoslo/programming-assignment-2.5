@@ -45,6 +45,8 @@
                 <property name="exportselection">true</property>
                 <property name="font">TkMenuFont</property>
                 <property name="textvariable">int:count</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputCount</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -63,7 +65,9 @@
             <child>
               <object class="tk.Entry" id="width">
                 <property name="font">TkDefaultFont</property>
-                <property name="textvariable">int:areaW</property>
+                <property name="textvariable">double:areaW</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputX</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -79,10 +83,10 @@
             </child>
             <child>
               <object class="tk.Entry" id="height">
-                <property name="exportselection">false</property>
                 <property name="font">TkDefaultFont</property>
-                <property name="show">0</property>
                 <property name="textvariable">int:areaH</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputY</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -111,7 +115,7 @@ Do you want?</property>
               <object class="tk.Radiobutton" id="selectPaper">
                 <property name="text" translatable="yes">Paper</property>
                 <property name="value">1</property>
-                <property name="variable">int:paperPrice</property>
+                <property name="variable">double:paperPrice</property>
                 <layout manager="pack">
                   <property name="anchor">w</property>
                   <property name="side">top</property>
@@ -121,8 +125,8 @@ Do you want?</property>
             <child>
               <object class="tk.Radiobutton" id="selectLam">
                 <property name="text" translatable="yes">Laminated</property>
-                <property name="value">3</property>
-                <property name="variable">int:paperPrice</property>
+                <property name="value">5</property>
+                <property name="variable">double:paperPrice</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -132,7 +136,7 @@ Do you want?</property>
               <object class="tk.Radiobutton" id="selectPVC">
                 <property name="text" translatable="yes">PVC</property>
                 <property name="value">35</property>
-                <property name="variable">int:paperPrice</property>
+                <property name="variable">double:paperPrice</property>
                 <layout manager="pack">
                   <property name="anchor">w</property>
                   <property name="side">top</property>
@@ -147,9 +151,6 @@ Do you want?</property>
       <object class="tk.Button" id="calcButton">
         <property name="anchor">e</property>
         <property name="command" type="command" cbtype="simple">calculate</property>
-        <property name="cursor">based_arrow_down</property>
-        <property name="default">normal</property>
-        <property name="state">normal</property>
         <property name="text" translatable="yes">hit to calculate</property>
         <layout manager="pack">
           <property name="anchor">w</property>
@@ -177,6 +178,7 @@ Do you want?</property>
         </child>
         <child>
           <object class="tk.Text" id="priceOutput">
+            <property name="font">TkFixedFont</property>
             <property name="height">1</property>
             <property name="width">10</property>
             <layout manager="pack">

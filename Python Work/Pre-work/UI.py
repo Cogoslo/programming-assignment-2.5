@@ -84,6 +84,7 @@ class Pyui3App:
 
     def calculate(self):
         pass
+        self.priceOutput.delete('1.0',tk.END)
 
         Xarea=int(self.width.get())
         Yarea=int(self.height.get())
@@ -104,8 +105,12 @@ class Pyui3App:
             if count > 10:
                 price = price + (((Xarea+Yarea)*0.0075)+materialprice)
                 iterationcount += 1
-        priceoutput=round(price, 1)
+        priceoutput=round(price, 2)
         self.priceOutput.insert('1.0', priceoutput)
+        if count < 10:
+            self.priceOutput.insert('1.0', 'Count < 10')
+        if priceoutput == None:
+            self.priceOutput.insert('1.0', 'No letters in input')
 
 
 if __name__ == "__main__":
