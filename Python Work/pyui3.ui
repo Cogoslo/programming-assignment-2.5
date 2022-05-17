@@ -42,11 +42,10 @@
             </child>
             <child>
               <object class="tk.Entry" id="entry6">
-                <property name="exportselection">true</property>
                 <property name="font">TkMenuFont</property>
                 <property name="textvariable">int:count</property>
                 <property name="validate">all</property>
-                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputCount</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">inputCount</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -65,9 +64,9 @@
             <child>
               <object class="tk.Entry" id="width">
                 <property name="font">TkDefaultFont</property>
-                <property name="textvariable">double:areaW</property>
+                <property name="textvariable">int:areaW</property>
                 <property name="validate">all</property>
-                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputX</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">inputX</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -86,7 +85,7 @@
                 <property name="font">TkDefaultFont</property>
                 <property name="textvariable">int:areaH</property>
                 <property name="validate">all</property>
-                <property name="validatecommand" type="command" cbtype="entry_validate" args="">inputY</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">inputY</property>
                 <layout manager="pack">
                   <property name="side">top</property>
                 </layout>
@@ -179,7 +178,7 @@ Do you want?</property>
         <child>
           <object class="tk.Text" id="priceOutput">
             <property name="font">TkFixedFont</property>
-            <property name="height">1</property>
+            <property name="height">2</property>
             <property name="width">10</property>
             <layout manager="pack">
               <property name="side">top</property>

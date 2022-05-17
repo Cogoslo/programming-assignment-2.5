@@ -2,7 +2,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 import decimal
-
+import re
 
 
 class Pyui3App:
@@ -18,7 +18,7 @@ class Pyui3App:
         self.label5.configure(text="How Many")
         self.label5.pack(side="top")
         self.entry6 = tk.Entry(self.areaCountFrame)
-        self.count = tk.IntVar(value="")
+        self.count = tk.StringVar(value="")
         self.entry6.configure(
             exportselection="true", font="TkMenuFont", textvariable=self.count
         )
@@ -27,14 +27,14 @@ class Pyui3App:
         self.AreaX.configure(cursor="based_arrow_down", relief="flat", text="AreaX")
         self.AreaX.pack(side="top")
         self.width = tk.Entry(self.areaCountFrame)
-        self.areaW = tk.IntVar(value="")
+        self.areaW = tk.StringVar(value="")
         self.width.configure(font="TkDefaultFont", textvariable=self.areaW)
         self.width.pack(side="top")
         self.AreaY = tk.Label(self.areaCountFrame)
         self.AreaY.configure(text="AreaY")
         self.AreaY.pack(side="top")
         self.height = tk.Entry(self.areaCountFrame)
-        self.areaH = tk.IntVar(value="")
+        self.areaH = tk.StringVar(value="")
         self.height.configure(font="TkDefaultFont", textvariable=self.areaH)
         self.height.pack(side="top")
         self.areaCountFrame.configure(height="200", width="200")
@@ -85,7 +85,12 @@ class Pyui3App:
     def calculate(self):
         pass
         self.priceOutput.delete('1.0',tk.END)
-
+        if not self.entry6.get().isdigit():
+            self.priceOutput.insert('1.0', 'bad input')
+        if not self.height.get().isdigit():
+            self.priceOutput.insert('1.0', 'bad input')
+        if not self.width.get().isdigit():
+            self.priceOutput.insert('1.0', 'bad input')
         Xarea=int(self.width.get())
         Yarea=int(self.height.get())
         iterationcount=1
