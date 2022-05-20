@@ -1,0 +1,332 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Frame" id="Programframe">
+    <property name="height">400</property>
+    <property name="width">800</property>
+    <layout manager="pack">
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="tk.Label" id="Label">
+        <property name="compound">bottom</property>
+        <property name="text" translatable="yes">Calc Program</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="inputFrame">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Inputframe</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="fill">x</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="areaCountFrame">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="tk.Label" id="label5">
+                <property name="text" translatable="yes">How Many</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry6">
+                <property name="font">TkMenuFont</property>
+                <property name="textvariable">int:count</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">vcmd</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Label" id="AreaX">
+                <property name="relief">flat</property>
+                <property name="text" translatable="yes">Height</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="width">
+                <property name="font">TkDefaultFont</property>
+                <property name="textvariable">int:areaW</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">vcmd</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Label" id="AreaY">
+                <property name="text" translatable="yes">Width</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="height">
+                <property name="font">TkDefaultFont</property>
+                <property name="textvariable">int:areaH</property>
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">vcmd</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="pickMaterialFrame">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="tk.Label" id="materialLabel">
+                <property name="text" translatable="yes">What material
+Do you want?</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Radiobutton" id="selectPaper">
+                <property name="text" translatable="yes">Paper</property>
+                <property name="value">1</property>
+                <property name="variable">double:paperPrice</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Radiobutton" id="selectLam">
+                <property name="text" translatable="yes">Laminated</property>
+                <property name="value">5</property>
+                <property name="variable">double:paperPrice</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Radiobutton" id="selectPVC">
+                <property name="text" translatable="yes">PVC</property>
+                <property name="value">35</property>
+                <property name="variable">double:paperPrice</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="calcButton">
+        <property name="anchor">e</property>
+        <property name="command" type="command" cbtype="simple">calculate</property>
+        <property name="text" translatable="yes">hit to calculate</property>
+        <layout manager="pack">
+          <property name="anchor">w</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Labelframe" id="labelframe6">
+        <property name="height">200</property>
+        <property name="text" translatable="yes">Output</property>
+        <property name="width">400</property>
+        <layout manager="pack">
+          <property name="expand">false</property>
+          <property name="fill">x</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="label6">
+            <property name="text" translatable="yes">Your Poster Costs</property>
+            <layout manager="pack">
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="priceOutput">
+            <property name="font">TkFixedFont</property>
+            <property name="height">2</property>
+            <property name="state">disabled</property>
+            <property name="width">10</property>
+            <layout manager="pack">
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame1">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="anchor">e</property>
+          <property name="side">left</property>
+        </layout>
+        <child>
+          <object class="ttk.Labelframe" id="InputFrame">
+            <property name="height">200</property>
+            <property name="text" translatable="yes">User Input Frame</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="HonInputLabel">
+                <property name="text" translatable="yes">Title</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Combobox" id="titleCombo">
+                <property name="values">Mr  Mrs Miss Dr Sit Mx</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label9">
+                <property name="text" translatable="yes">First Name</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="nameEntry">
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label10">
+                <property name="text" translatable="yes">Surname</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="surnameEntry">
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label11">
+                <property name="text" translatable="yes">Address Line 1</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="addr1Entry">
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label12">
+                <property name="text" translatable="yes">Address Line 2</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="addr2Entry">
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label13">
+                <property name="text" translatable="yes">Phone Number</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="phone">
+                <property name="validate">all</property>
+                <property name="validatecommand" type="command" cbtype="entry_validate" args="%P">vcmd</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Labelframe" id="Userinfooutputframe">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="Userinfooutputlabel">
+                <property name="text" translatable="yes">User Info Output</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Text" id="text2">
+                <property name="height">10</property>
+                <property name="width">50</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
