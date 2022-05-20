@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Labelframe" id="labelframe2">
+    <property name="height">200</property>
+    <property name="text" translatable="yes">Program4Calc</property>
+    <property name="width">200</property>
+    <layout manager="pack">
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="tk.Label" id="PaperselectorNote">
+        <property name="font">TkDefaultFont</property>
+        <property name="state">disabled</property>
+        <property name="text" translatable="yes">What Paper Do you Want?</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Radiobutton" id="PaperButton">
+        <property name="font">TkDefaultFont</property>
+        <property name="indicatoron">true</property>
+        <property name="justify">left</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Paper</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Radiobutton" id="LaminateButton">
+        <property name="text" translatable="yes">PVC</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Radiobutton" id="PVCButton">
+        <property name="cursor">based_arrow_down</property>
+        <property name="overrelief">flat</property>
+        <property name="relief">raised</property>
+        <property name="takefocus">true</property>
+        <property name="text" translatable="yes">Laminate</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
