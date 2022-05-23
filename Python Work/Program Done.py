@@ -146,7 +146,7 @@ class Pyui3App:
         Addr1 = self.addr1Entry.get()
         Addr2 = self.addr2Entry.get()
         Phone = self.phone.get()
-        TotalUser= (Title + FirstName + Surname + "\n" + Addr1 + "\n" + Addr2 + "\n" + Phone )
+        TotalUser= (Title + " " + FirstName + " " + Surname + "\n" + Addr1 + "\n" + Addr2 + "\n" + Phone )
         if self.titleCombo.get() and self.nameEntry.get() and self.surnameEntry.get() and self.addr1Entry.get() and self.addr2Entry.get() and self.phone.get().isdigit:
             self.InfoOutput.insert('1.0', TotalUser)
         else:
